@@ -178,4 +178,1020 @@
         width: 7px;
         height: 7px;
         border-radius: 999px;
-        background
+        background: rgba(148,163,184,0.7);
+    }
+
+    .nav-link.active .nav-dot {
+        background: var(--accent);
+        box-shadow: 0 0 10px rgba(56,189,248,0.8);
+    }
+
+    .sidebar-footer {
+        margin-top: auto;
+        font-size: 11px;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .sidebar-footer span {
+        display: block;
+    }
+
+    .sidebar-footer strong {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* MOBILE TOGGLE */
+    .sidebar-toggle {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 30;
+        background: rgba(15,23,42,0.96);
+        border-radius: 999px;
+        padding: 8px 11px;
+        border: 1px solid rgba(51,65,85,0.9);
+        color: var(--text-main);
+        font-size: 13px;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .sidebar-toggle-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 10px rgba(56,189,248,0.9);
+    }
+
+    /* MAIN AREA */
+    .main {
+        margin-left: 270px;
+        width: calc(100% - 270px);
+        min-height: 100vh;
+        padding: 22px 26px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .main-inner {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    /* HERO */
+    .hero {
+        position: relative;
+        border-radius: 26px;
+        overflow: hidden;
+        background: radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 55%), radial-gradient(circle at bottom right, rgba(59,130,246,0.16), transparent 55%), #020617;
+        box-shadow: var(--shadow-soft);
+        padding: 22px 22px 22px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+        gap: 18px;
+        align-items: stretch;
+    }
+
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+        font-size: 11px;
+        color: var(--text-muted);
+        width: fit-content;
+    }
+
+    .hero-pill-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--success);
+        box-shadow: 0 0 10px rgba(74,222,128,0.9);
+    }
+
+    .hero-title-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .hero-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-glow);
+    }
+
+    .hero-title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        color: var(--text-muted);
+    }
+
+    .hero-description {
+        font-size: 14px;
+        color: var(--text-main);
+        max-width: 460px;
+    }
+
+    .hero-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+    }
+
+    .btn {
+        border-radius: 999px;
+        padding: 9px 16px;
+        font-size: 13px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        text-decoration: none;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
+        white-space: nowrap;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--accent-strong), #22c1c3);
+        color: #0b1120;
+        box-shadow: var(--shadow-glow);
+        font-weight: 600;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 0 30px rgba(56,189,248,0.8);
+    }
+
+    .btn-ghost {
+        background: rgba(15,23,42,0.9);
+        color: var(--text-main);
+        border: 1px solid rgba(51,65,85,0.9);
+    }
+
+    .btn-ghost:hover {
+        background: rgba(15,23,42,1);
+        transform: translateY(-1px);
+    }
+
+    .btn-pill {
+        font-size: 11px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+        color: var(--text-muted);
+    }
+
+    .hero-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+
+    .hero-meta-pill {
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .hero-right {
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+        background: radial-gradient(circle at top, rgba(56,189,248,0.18), transparent 55%), radial-gradient(circle at bottom, rgba(59,130,246,0.18), transparent 55%), #020617;
+        border: 1px solid rgba(30,64,175,0.7);
+        box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-right-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+
+    .hero-right-dots {
+        display: flex;
+        gap: 4px;
+    }
+
+    .hero-right-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: rgba(148,163,184,0.7);
+    }
+
+    .hero-right-dot:nth-child(1) { background: #f97373; }
+    .hero-right-dot:nth-child(2) { background: #fbbf24; }
+    .hero-right-dot:nth-child(3) { background: #4ade80; }
+
+    .hero-preview {
+        flex: 1;
+        border-radius: 16px;
+        overflow: hidden;
+        background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617 60%);
+        border: 1px solid rgba(30,64,175,0.7);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+    }
+
+    .hero-preview-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        background: url('https://wallpapercave.com/wp/wp4923991.jpg') center/cover no-repeat;
+        filter: saturate(1.1) brightness(0.9);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-preview-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top, rgba(15,23,42,0.4), transparent 55%), linear-gradient(to bottom, rgba(15,23,42,0.7), rgba(15,23,42,0.95));
+    }
+
+    .hero-preview-content {
+        position: absolute;
+        inset: 0;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 11px;
+    }
+
+    .hero-preview-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-muted);
+    }
+
+    .hero-preview-tag {
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+        font-size: 10px;
+    }
+
+    .hero-preview-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-main);
+    }
+
+    .hero-preview-title {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .hero-preview-meta {
+        font-size: 10px;
+        color: var(--text-muted);
+    }
+
+    .hero-preview-pill-row {
+        display: flex;
+        gap: 6px;
+        margin-top: 4px;
+        font-size: 10px;
+    }
+
+    .hero-preview-pill {
+        padding: 3px 7px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+    }
+
+    .hero-preview-cta {
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--accent-strong), #22c1c3);
+        color: #020617;
+        font-size: 11px;
+        font-weight: 600;
+        box-shadow: var(--shadow-glow);
+    }
+
+    /* SECTIONS */
+    .section {
+        border-radius: 22px;
+        background: rgba(15,23,42,0.96);
+        border: 1px solid rgba(31,41,55,0.95);
+        box-shadow: var(--shadow-soft);
+        padding: 18px 18px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section-title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .section-title {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    .section-subtitle {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+    .section-badge-row {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .badge {
+        font-size: 10px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(51,65,85,0.9);
+        background: rgba(15,23,42,0.9);
+        color: var(--text-muted);
+    }
+
+    .badge-accent {
+        border-color: rgba(56,189,248,0.7);
+        color: var(--accent);
+        background: rgba(8,47,73,0.7);
+    }
+
+    /* FEATURE GRID */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .feature-card {
+        border-radius: var(--radius-lg);
+        background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617 70%);
+        border: 1px solid rgba(31,41,55,0.95);
+        padding: 12px 12px 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast);
+    }
+
+    .feature-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top left, rgba(56,189,248,0.12), transparent 55%);
+        opacity: 0;
+        transition: opacity var(--transition-fast);
+        pointer-events: none;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+        border-color: rgba(56,189,248,0.7);
+        background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617 70%);
+    }
+
+    .feature-card:hover::after {
+        opacity: 1;
+    }
+
+    .feature-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--text-muted);
+    }
+
+    .feature-title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .feature-body {
+        color: var(--text-muted);
+    }
+
+    .feature-meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 10px;
+        color: var(--text-muted);
+        margin-top: 4px;
+    }
+
+    .feature-meta-pill-row {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .feature-meta-pill {
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+    }
+
+    /* ACTION GRID */
+    .action-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .action-card {
+        border-radius: var(--radius-lg);
+        background: radial-gradient(circle at top, rgba(15,23,42,0.9), #020617 70%);
+        border: 1px solid rgba(31,41,55,0.95);
+        padding: 11px 11px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), background var(--transition-fast), opacity var(--transition-fast);
+    }
+
+    .action-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+        border-color: rgba(56,189,248,0.7);
+    }
+
+    .action-label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+
+    .action-title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .action-body {
+        color: var(--text-muted);
+        font-size: 12px;
+    }
+
+    .action-cta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4px;
+        font-size: 11px;
+    }
+
+    .action-cta-link {
+        font-size: 11px;
+        color: var(--accent);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .action-cta-link:hover {
+        text-decoration: underline;
+    }
+
+    .action-tag {
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.9);
+        border: 1px solid rgba(51,65,85,0.9);
+        color: var(--text-muted);
+        font-size: 10px;
+    }
+
+    /* STATUS BAR */
+    .status-bar {
+        margin-top: 4px;
+        border-radius: 999px;
+        background: rgba(15,23,42,0.96);
+        border: 1px solid rgba(31,41,55,0.95);
+        padding: 6px 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px;
+        color: var(--text-muted);
+    }
+
+    .status-key-row {
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .status-key {
+        padding: 2px 6px;
+        border-radius: 6px;
+        border: 1px solid rgba(51,65,85,0.9);
+        background: rgba(15,23,42,0.9);
+        font-size: 10px;
+    }
+
+    .status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: var(--success);
+        box-shadow: 0 0 10px rgba(74,222,128,0.9);
+    }
+
+    .status-divider {
+        width: 1px;
+        height: 16px;
+        background: rgba(31,41,55,0.9);
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--text-muted);
+        text-align: center;
+    }
+
+    footer strong {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+        .hero {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .hero-right {
+            min-height: 220px;
+        }
+        .feature-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .action-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 780px) {
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform var(--transition-med);
+        }
+        .sidebar.open {
+            transform: translateX(0);
+        }
+        .sidebar-toggle {
+            display: inline-flex;
+        }
+        .main {
+            margin-left: 0;
+            width: 100%;
+            padding-top: 48px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .feature-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .action-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+        .hero {
+            padding: 18px 16px 16px;
+        }
+        .main {
+            padding: 18px 14px 18px;
+        }
+        .section {
+            padding: 14px 14px 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<button class="sidebar-toggle" id="sidebarToggle">
+    <span class="sidebar-toggle-dot"></span>
+    Menu
+</button>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="icon.png" alt="J&C Unblocked Logo">
+            <div class="sidebar-title-block">
+                <div class="sidebar-title">J&C Unblocked</div>
+                <div class="sidebar-subtitle">School‑friendly game hub</div>
+            </div>
+        </div>
+
+        <div>
+            <div class="sidebar-section-label">Main</div>
+            <div class="nav-group">
+                <a class="nav-link active" data-scroll="#home">
+                    <span class="nav-dot"></span>
+                    <span>Home</span>
+                </a>
+                <a class="nav-link" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">
+                    <span class="nav-dot"></span>
+                    <span>Game Hub</span>
+                    <span class="nav-pill">Open</span>
+                </a>
+                <a class="nav-link" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">
+                    <span class="nav-dot"></span>
+                    <span>Unblocked Browser</span>
+                </a>
+            </div>
+        </div>
+
+        <div>
+            <div class="sidebar-section-label">Feedback</div>
+            <div class="nav-group">
+                <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform?usp=header" target="_blank">
+                    <span class="nav-dot"></span>
+                    <span>Request Game</span>
+                </a>
+                <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform?usp=header" target="_blank">
+                    <span class="nav-dot"></span>
+                    <span>Report Bug</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <span><strong>Tip:</strong> Open Game Hub in a new tab and keep this homepage as your control center.</span>
+            <span>Built for students who want smart, quiet, unblocked fun.</span>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <div class="main-inner" id="home">
+
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero-left">
+                    <div class="hero-pill">
+                        <span class="hero-pill-dot"></span>
+                        Live · JC Unblocked is online
+                    </div>
+
+                    <div class="hero-title-row">
+                        <img src="icon.png" alt="Logo" class="hero-logo">
+                        <div class="hero-title-block">
+                            <div class="hero-title">Your stealth game launcher at school.</div>
+                            <div class="hero-subtitle">Games, browser, and requests — all in one clean hub.</div>
+                        </div>
+                    </div>
+
+                    <p class="hero-description">
+                        J&C Unblocked is built for students who want a simple, fast way to launch games and visit blocked sites — without digging through sketchy links or broken pages.
+                    </p>
+
+                    <div class="hero-cta-row">
+                        <a class="btn btn-primary" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">
+                            Open Game Hub
+                        </a>
+                        <a class="btn btn-ghost" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">
+                            Launch Unblocked Browser
+                        </a>
+                    </div>
+
+                    <div class="hero-meta-row">
+                        <div class="hero-meta-pill">No logins · No ads · No drama</div>
+                        <div class="hero-meta-pill">Optimized for school Chromebooks</div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-right-header">
+                        <span>JC Control Panel</span>
+                        <div class="hero-right-dots">
+                            <span class="hero-right-dot"></span>
+                            <span class="hero-right-dot"></span>
+                            <span class="hero-right-dot"></span>
+                        </div>
+                    </div>
+
+                    <div class="hero-preview">
+                        <div class="hero-preview-inner">
+                            <div class="hero-preview-overlay"></div>
+                            <div class="hero-preview-content">
+                                <div class="hero-preview-top">
+                                    <span class="hero-preview-tag">Preview</span>
+                                    <span>JC‑Browser · JC‑GameHub</span>
+                                </div>
+                                <div class="hero-preview-bottom">
+                                    <div>
+                                        <div class="hero-preview-title">Quick actions</div>
+                                        <div class="hero-preview-meta">Pick your lane and go.</div>
+                                        <div class="hero-preview-pill-row">
+                                            <div class="hero-preview-pill">Open Game Hub</div>
+                                            <div class="hero-preview-pill">Launch Browser</div>
+                                            <div class="hero-preview-pill">Request Game</div>
+                                        </div>
+                                    </div>
+                                    <div class="hero-preview-cta">
+                                        JC Ready
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- WHY SECTION -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title-block">
+                        <div class="section-title">Why J&C Unblocked actually works at school</div>
+                        <div class="section-subtitle">
+                            Designed to be simple enough for a Chromebook, clean enough for a teacher walking by.
+                        </div>
+                    </div>
+                    <div class="section-badge-row">
+                        <span class="badge badge-accent">School‑friendly</span>
+                        <span class="badge">No sign‑ups</span>
+                        <span class="badge">Fast to open</span>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-label">01 · Game Hub</div>
+                        <div class="feature-title">One place for all your games</div>
+                        <div class="feature-body">
+                            Instead of chasing random links, the JC Game Hub keeps everything in one clean launcher that you can bookmark and open in seconds.
+                        </div>
+                        <div class="feature-meta-row">
+                            <div class="feature-meta-pill-row">
+                                <span class="feature-meta-pill">Curated games</span>
+                                <span class="feature-meta-pill">Fast loading</span>
+                            </div>
+                            <span>Opens in new tab</span>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-label">02 · Unblocked Browser</div>
+                        <div class="feature-title">Visit blocked sites, quietly</div>
+                        <div class="feature-body">
+                            JC Browser lets you reach sites like TikTok or other blocked pages through a clean, fullscreen interface that still feels like a normal tab.
+                        </div>
+                        <div class="feature-meta-row">
+                            <div class="feature-meta-pill-row">
+                                <span class="feature-meta-pill">Fullscreen</span>
+                                <span class="feature-meta-pill">Simple UI</span>
+                            </div>
+                            <span>Chromebook‑friendly</span>
+                        </div>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-label">03 · Requests & Bugs</div>
+                        <div class="feature-title">You help shape the hub</div>
+                        <div class="feature-body">
+                            Use the Request Game and Report Bug forms to tell us what to add or fix. No accounts, no emails — just quick forms.
+                        </div>
+                        <div class="feature-meta-row">
+                            <div class="feature-meta-pill-row">
+                                <span class="feature-meta-pill">Google Forms</span>
+                                <span class="feature-meta-pill">No login</span>
+                            </div>
+                            <span>Under 30 seconds</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ACTIONS SECTION -->
+            <section class="section">
+                <div class="section-header">
+                    <div class="section-title-block">
+                        <div class="section-title">Quick actions</div>
+                        <div class="section-subtitle">
+                            Use these four buttons like a control deck — hub, browser, request, and bug report.
+                        </div>
+                    </div>
+                    <div class="section-badge-row">
+                        <span class="badge">Best with two tabs open</span>
+                    </div>
+                </div>
+
+                <div class="action-grid">
+                    <article class="action-card">
+                        <div class="action-label-row">
+                            <span>Game Hub</span>
+                            <span class="action-tag">Primary</span>
+                        </div>
+                        <div class="action-title">Open JC Unblocked Game Hub</div>
+                        <div class="action-body">
+                            Launch the full game list in a new tab and keep this page as your base.
+                        </div>
+                        <div class="action-cta-row">
+                            <a class="action-cta-link" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">
+                                Open Game Hub →
+                            </a>
+                            <span>New tab</span>
+                        </div>
+                    </article>
+
+                    <article class="action-card">
+                        <div class="action-label-row">
+                            <span>Unblocked Browser</span>
+                            <span class="action-tag">Utility</span>
+                        </div>
+                        <div class="action-title">Launch JC Browser</div>
+                        <div class="action-body">
+                            Use the browser to reach blocked sites through a fullscreen, game‑style interface.
+                        </div>
+                        <div class="action-cta-row">
+                            <a class="action-cta-link" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">
+                                Launch Browser →
+                            </a>
+                            <span>New tab</span>
+                        </div>
+                    </article>
+
+                    <article class="action-card">
+                        <div class="action-label-row">
+                            <span>Request Game</span>
+                            <span class="action-tag">Form</span>
+                        </div>
+                        <div class="action-title">Ask for a new game</div>
+                        <div class="action-body">
+                            Tell us which game you want added. Be specific so we can find the right version.
+                        </div>
+                        <div class="action-cta-row">
+                            <a class="action-cta-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform?usp=header" target="_blank">
+                                Open Request Form →
+                            </a>
+                            <span>Under 30s</span>
+                        </div>
+                    </article>
+
+                    <article class="action-card">
+                        <div class="action-label-row">
+                            <span>Report Bug</span>
+                            <span class="action-tag">Form</span>
+                        </div>
+                        <div class="action-title">Report a broken game or link</div>
+                        <div class="action-body">
+                            If something doesn’t load or a link is blocked, send a quick bug report.
+                        </div>
+                        <div class="action-cta-row">
+                            <a class="action-cta-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform?usp=header" target="_blank">
+                                Open Bug Form →
+                            </a>
+                            <span>Under 20s</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="status-bar">
+                    <span class="status-dot"></span>
+                    <span>JC Status: Online · Game Hub + Browser ready.</span>
+                    <span class="status-divider"></span>
+                    <div class="status-key-row">
+                        <span class="status-key">Tip: Pin this tab</span>
+                        <span class="status-key">Open Game Hub in another tab</span>
+                    </div>
+                </div>
+
+                <footer>
+                    J&C Unblocked © 2026 · <strong>Built as a clean, school‑friendly launcher — not a sketchy link farm.</strong>
+                </footer>
+            </section>
+
+        </div>
+    </main>
+
+</div>
+
+<script>
+    // Sidebar toggle for mobile
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.getElementById('sidebarToggle');
+
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    }
+
+    // Smooth scroll + active state for internal nav
+    const navLinks = document.querySelectorAll('.nav-link[data-scroll]');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const target = link.getAttribute('data-scroll');
+            if (target && target.startsWith('#')) {
+                e.preventDefault();
+                const el = document.querySelector(target);
+                if (el) {
+                    window.scrollTo({
+                        top: el.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                if (window.innerWidth <= 780) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
