@@ -6,155 +6,176 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+    :root {
+        --bg-main: #020617;
+        --bg-elevated: #020617;
+        --bg-card: #020617;
+        --bg-sidebar: #020617;
+        --accent: #38bdf8;
+        --accent-soft: rgba(56,189,248,0.15);
+        --accent-strong: #0ea5e9;
+        --text-main: #e5e7eb;
+        --text-muted: #9ca3af;
+        --danger: #f97373;
+        --warning: #fbbf24;
+        --success: #4ade80;
+        --border-subtle: #1f2937;
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --radius-sm: 8px;
+        --shadow-soft: 0 18px 45px rgba(15,23,42,0.9);
+        --shadow-glow: 0 0 25px rgba(56,189,248,0.45);
+        --transition-fast: 0.18s ease-out;
+        --transition-med: 0.25s ease-out;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
     body {
         margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0d1117;
-        color: white;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #0b1120 0, #020617 45%, #000 100%);
+        color: var(--text-main);
         display: flex;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    /* LAYOUT WRAPPER */
+    .app-shell {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
     }
 
     /* SIDEBAR */
     .sidebar {
-        width: 260px;
-        background: #111827;
-        height: 100vh;
-        padding-top: 20px;
+        width: 270px;
+        background: linear-gradient(180deg, #020617 0%, #020617 40%, #020617 100%);
+        border-right: 1px solid var(--border-subtle);
+        padding: 18px 18px 20px;
         position: fixed;
         left: 0;
         top: 0;
-        overflow-y: auto;
-        border-right: 2px solid #1f2937;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        z-index: 20;
     }
 
     .sidebar-header {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 20px;
+        gap: 12px;
+        padding: 10px 10px;
+        border-radius: var(--radius-lg);
+        background: radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 55%);
+        box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
     }
 
     .sidebar-header img {
-        width: 45px;
-        height: 45px;
-        border-radius: 6px;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        box-shadow: var(--shadow-glow);
     }
 
-    .sidebar-header span {
-        font-size: 22px;
-        font-weight: bold;
-        color: #60a5fa;
+    .sidebar-title-block {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .sidebar-title {
+        font-size: 19px;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+    }
+
+    .sidebar-subtitle {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--text-muted);
+    }
+
+    .sidebar-section-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: var(--text-muted);
+        margin: 10px 4px 4px;
+    }
+
+    .nav-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
     }
 
     .nav-link {
-        display: block;
-        padding: 12px 20px;
-        color: #d1d5db;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 11px;
+        border-radius: var(--radius-md);
+        color: var(--text-muted);
         text-decoration: none;
-        font-size: 16px;
-        transition: 0.2s;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), padding-left var(--transition-fast);
+    }
+
+    .nav-link span.nav-pill {
+        font-size: 11px;
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(56,189,248,0.12);
+        color: var(--accent);
+        margin-left: auto;
+    }
+
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        width: 3px;
+        height: 0;
+        border-radius: 999px;
+        background: var(--accent);
+        opacity: 0;
+        transition: height var(--transition-med), opacity var(--transition-med);
     }
 
     .nav-link:hover {
-        background: #1f2937;
-        color: white;
-        padding-left: 28px;
+        background: rgba(15,23,42,0.95);
+        color: var(--text-main);
+        padding-left: 15px;
+        transform: translateX(1px);
+        box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
     }
 
-    /* MAIN CONTENT */
-    .main {
-        margin-left: 260px;
-        width: calc(100% - 260px);
-        min-height: 100vh;
+    .nav-link.active {
+        background: rgba(15,23,42,0.98);
+        color: var(--text-main);
+        box-shadow: var(--shadow-glow);
     }
 
-    /* HERO SECTION */
-    .hero {
-        background: url('https://wallpapercave.com/wp/wp4923991.jpg') center/cover no-repeat;
-        height: 420px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-shadow: 0 0 10px black;
-        animation: fadeIn 1.5s ease;
+    .nav-link.active::before {
+        opacity: 1;
+        height: 70%;
     }
 
-    .hero img {
-        width: 120px;
-        margin-bottom: 15px;
-        filter: drop-shadow(0 0 10px black);
-    }
-
-    .hero h1 {
-        font-size: 48px;
-        margin: 0;
-        font-weight: 800;
-    }
-
-    .hero p {
-        font-size: 22px;
-        margin-top: 10px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 20px;
-        background: #111827;
-        margin-top: 40px;
-        border-top: 2px solid #1f2937;
-        font-size: 14px;
-        color: #9ca3af;
-    }
-</style>
-</head>
-
-<body>
-
-<!-- SIDEBAR -->
-<div class="sidebar">
-
-    <div class="sidebar-header">
-        <img src="icon.png" alt="Logo">
-        <span>J&C Unblocked</span>
-    </div>
-
-    <a class="nav-link" href="#">Home</a>
-
-    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform?usp=header" target="_blank">
-        Request Game
-    </a>
-
-    <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform?usp=header" target="_blank">
-        Report Bug
-    </a>
-
-    <a class="nav-link" href="https://moneyenr123.github.io/JC-Browser/">Unblocked Browser</a>
-    <a class="nav-link" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/">JC Unblocked Game Hub</a>
-
-</div>
-
-<!-- MAIN CONTENT -->
-<div class="main">
-
-    <div class="hero">
-        <img src="icon.png" alt="Logo">
-        <h1>J&C UNBLOCKED GAMES</h1>
-        <p>Your one-stop video game centre</p>
-    </div>
-
-    <footer>
-        J&C Unblocked © 2026 — A helpful hub created for students where you can play unblocked games during class and visit blocked websites like TikTok at school with the unblocked browser.
-    </footer>
-
-</div>
-
-</body>
-</html>
+    .nav-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background
