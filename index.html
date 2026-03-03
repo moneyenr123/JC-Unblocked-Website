@@ -1,180 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&C Unblocked</title>
+<meta charset="UTF-8">
+<title>J&C Unblocked Games</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    <meta name="theme-color" content="#0a0f1a">
+<style>
+/* ROOT THEME */
+:root {
+    --bg-main: #020617;
+    --bg-elevated: #020617;
+    --bg-card: #020617;
+    --bg-sidebar: #020617;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56,189,248,0.15);
+    --accent-strong: #0ea5e9;
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --danger: #f97373;
+    --warning: #fbbf24;
+    --success: #4ade80;
+    --border-subtle: #1f2937;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 18px 45px rgba(15,23,42,0.9);
+    --shadow-glow: 0 0 25px rgba(56,189,248,0.45);
+    --transition-fast: 0.18s ease-out;
+    --transition-med: 0.25s ease-out;
+}
 
-    <style>
-        body {
-            margin: 0;
-            background: #0a0f1a;
-            color: white;
-            font-family: system-ui, sans-serif;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
+* { box-sizing: border-box; }
 
-        /* Sidebar */
-        .sidebar {
-            width: 260px;
-            background: #0d1320;
-            border-right: 2px solid #1a73e8;
-            padding: 20px;
-            overflow-y: auto;
-        }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #0b1120 0, #020617 45%, #000 100%);
+    color: var(--text-main);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-        .sidebar h2 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #1a73e8;
-        }
+a { color: inherit; }
 
-        .game-item {
-            padding: 10px 12px;
-            margin-bottom: 8px;
-            background: #111827;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
+/* APP LAYOUT */
+.app-shell {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
 
-        .game-item:hover {
-            background: #1a73e8;
-        }
+/* SIDEBAR */
+.sidebar {
+    width: 270px;
+    background: #020617;
+    border-right: 1px solid var(--border-subtle);
+    padding: 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 20;
+}
 
-        /* Main content */
-        .main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: var(--radius-lg);
+    background: radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 55%);
+    box-shadow: 0 0 0 1px rgba(15,23,42,0.9);
+}
 
-        /* Hero section */
-        .hero {
-            padding: 25px;
-            border-bottom: 2px solid #1a73e8;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+.sidebar-header img {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-glow);
+}
 
-        .hero img {
-            width: 70px;
-            height: 70px;
-            border-radius: 12px;
-        }
+.sidebar-title { font-size: 19px; font-weight: 800; }
+.sidebar-subtitle { font-size: 11px; color: var(--text-muted); }
 
-        .hero-text h1 {
-            margin: 0;
-            font-size: 26px;
-        }
+.sidebar-section-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-muted);
+    margin: 10px 4px 4px;
+}
 
-        .hero-text p {
-            margin: 4px 0 0;
-            opacity: 0.8;
-        }
+.nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
 
-        /* Embed area */
-        .embed-area {
-            flex: 1;
-            background: #05070d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 11px;
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-fast);
+}
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+.nav-link:hover {
+    background: rgba(15,23,42,0.95);
+    color: var(--text-main);
+    padding-left: 15px;
+    transform: translateX(1px);
+}
 
-        /* Right panel */
-        .right-panel {
-            width: 260px;
-            background: #0d1320;
-            border-left: 2px solid #1a73e8;
-            padding: 20px;
-        }
+.nav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(148,163,184,0.7);
+}
 
-        .panel-btn {
-            display: block;
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 12px;
-            background: #1a73e8;
-            color: white;
-            text-align: center;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+.nav-link:hover .nav-dot {
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(56,189,248,0.8);
+}
 
-        .panel-btn:hover {
-            background: #1664c4;
-        }
-    </style>
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 11px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
-    <script>
-        function loadGame(url) {
-            document.getElementById("gameFrame").src = url;
-        }
-    </script>
+/* MAIN */
+.main {
+    margin-left: 270px;
+    width: calc(100% - 270px);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.main-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* HERO */
+.hero {
+    border-radius: 26px;
+    background: #020617;
+    box-shadow: var(--shadow-soft);
+    padding: 22px;
+    display: grid;
+    grid-template-columns: 1.4fr 1.1fr;
+    gap: 18px;
+}
+
+.hero-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-glow);
+}
+
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(51,65,85,0.9);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.hero-pill-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--success);
+    box-shadow: 0 0 10px rgba(74,222,128,0.9);
+}
+
+.hero-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-title {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.hero-description {
+    font-size: 14px;
+    color: var(--text-main);
+    max-width: 460px;
+}
+
+.btn {
+    border-radius: 999px;
+    padding: 9px 16px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-strong), #22c1c3);
+    color: #0b1120;
+    font-weight: 600;
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-ghost {
+    background: rgba(15,23,42,0.9);
+    color: var(--text-main);
+    border: 1px solid rgba(51,65,85,0.9);
+}
+
+/* SECTION */
+.section {
+    border-radius: 22px;
+    background: rgba(15,23,42,0.96);
+    border: 1px solid rgba(31,41,55,0.95);
+    box-shadow: var(--shadow-soft);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.section-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.section-subtitle {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* FEATURE GRID */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.feature-card {
+    border-radius: var(--radius-lg);
+    background: #020617;
+    border: 1px solid rgba(31,41,55,0.95);
+    padding: 12px;
+    font-size: 12px;
+}
+
+/* ACTION GRID */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.action-card {
+    border-radius: var(--radius-lg);
+    background: #020617;
+    border: 1px solid rgba(31,41,55,0.95);
+    padding: 12px;
+    font-size: 12px;
+}
+
+/* STATUS BAR */
+.status-bar {
+    border-radius: 999px;
+    background: rgba(15,23,42,0.96);
+    border: 1px solid rgba(31,41,55,0.95);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: var(--success);
+    box-shadow: 0 0 10px rgba(74,222,128,0.9);
+}
+
+/* FOOTER */
+footer {
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+footer strong {
+    color: var(--accent);
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Games</h2>
+<div class="app-shell">
 
-        <div class="game-item" onclick="loadGame('https://game.azgame.io/traffic-rally/#')">Traffic Rally</div>
-        <div class="game-item" onclick="loadGame('https://www.scary-teacher.com/wp-content/uploads/games/scary-teacher.html')">Scary Teacher</div>
-        <div class="game-item" onclick="loadGame('https://2v2.io/')">2v2.io</div>
-        <div class="game-item" onclick="loadGame('https://gamea.azgame.io/ice-baby-quest/')">Ice Baby Quest</div>
-        <div class="game-item" onclick="loadGame('https://gamea.azgame.io/ice-baby-quest-2/')">Ice Baby Quest 2</div>
-        <div class="game-item" onclick="loadGame('https://azgames.io/arcade-tennis.embed')">Arcade Tennis</div>
-        <div class="game-item" onclick="loadGame('https://veck.io/')">Veck.io</div>
-        <div class="game-item" onclick="loadGame('https://survev.io/#')">Survev.io</div>
-        <div class="game-item" onclick="loadGame('https://roblnet13.github.io/pvz/game/iframe.html#')">Plants vs Zombies</div>
-        <div class="game-item" onclick="loadGame('https://notan127.github.io/SM64-PC-Port-WebGL/classic/')">Super Mario 64</div>
-        <div class="game-item" onclick="loadGame('https://space-waves-unblocked.github.io/space-waves/#')">Space Waves</div>
-        <div class="game-item" onclick="loadGame('https://azgames.io/arcade-volley.embed')">Arcade Volley</div>
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="sidebar-header">
+        <img src="favicon.png" alt="Logo">
+        <div>
+            <div class="sidebar-title">J&C Unblocked</div>
+            <div class="sidebar-subtitle">School‑friendly game hub</div>
+        </div>
     </div>
 
-    <!-- Main content -->
-    <div class="main">
+    <!-- MAIN -->
+    <div>
+        <div class="sidebar-section-label">Main</div>
+        <div class="nav-group">
+            <a class="nav-link active">
+                <span class="nav-dot"></span>
+                <span>Home</span>
+            </a>
+            <a class="nav-link" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">
+                <span class="nav-dot"></span>
+                <span>Game Hub</span>
+            </a>
+            <a class="nav-link" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">
+                <span class="nav-dot"></span>
+                <span>Unblocked Browser</span>
+            </a>
+        </div>
+    </div>
 
-        <!-- Hero -->
-        <div class="hero">
-            <img src="favicon.png" alt="Logo">
-            <div class="hero-text">
-                <h1>J&C Unblocked</h1>
-                <p>Your stealth game launcher at school.</p>
+    <!-- GAMES (NO LABEL) -->
+    <div class="nav-group">
+
+        <a class="nav-link" href="https://game.azgame.io/traffic-rally/#" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Traffic Rally</span>
+        </a>
+
+        <a class="nav-link" href="https://www.scary-teacher.com/wp-content/uploads/games/scary-teacher.html" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Scary Teacher</span>
+        </a>
+
+        <a class="nav-link" href="https://2v2.io/" target="_blank">
+            <span class="nav-dot"></span>
+            <span>2v2.io</span>
+        </a>
+
+        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest/" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Ice Baby Quest</span>
+        </a>
+
+        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest-2/" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Ice Baby Quest 2</span>
+        </a>
+
+        <a class="nav-link" href="https://azgames.io/arcade-tennis.embed" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Arcade Tennis</span>
+        </a>
+
+        <a class="nav-link" href="https://veck.io/" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Veck.io</span>
+        </a>
+
+        <a class="nav-link" href="https://survev.io/#" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Survev.io</span>
+        </a>
+
+        <a class="nav-link" href="https://roblnet13.github.io/pvz/game/iframe.html#" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Plants vs. Zombies</span>
+        </a>
+
+        <a class="nav-link" href="https://notan127.github.io/SM64-PC-Port-WebGL/classic/" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Super Mario 64</span>
+        </a>
+
+        <a class="nav-link" href="https://space-waves-unblocked.github.io/space-waves/#" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Space Waves</span>
+        </a>
+
+        <a class="nav-link" href="https://azgames.io/arcade-volley.embed" target="_blank">
+            <span class="nav-dot"></span>
+            <span>Arcade Volley</span>
+        </a>
+
+    </div>
+
+    <!-- FEEDBACK -->
+    <div>
+        <div class="sidebar-section-label">Feedback</div>
+        <div class="nav-group">
+            <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform" target="_blank">
+                <span class="nav-dot"></span>
+                <span>Request Game</span>
+            </a>
+            <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform" target="_blank">
+                <span class="nav-dot"></span>
+                <span>Report Bug</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="sidebar-footer">
+        <span><strong>Tip:</strong> Keep this homepage open as your control center.</span>
+        <span>Built for students who want clean, quiet unblocked access.</span>
+    </div>
+
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+<div class="main-inner" id="home">
+
+<!-- HERO -->
+<section class="hero">
+
+    <div>
+        <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            Live · JC Unblocked is online
+        </div>
+
+        <div class="hero-title-row">
+            <img src="favicon.png" class="hero-logo">
+            <div>
+                <div class="hero-title">Your stealth game launcher at school.</div>
+                <div class="hero-subtitle">Games, browser, and requests — all in one clean hub.</div>
             </div>
         </div>
 
-        <!-- Embed area -->
-        <div class="embed-area">
-            <iframe id="gameFrame" src="" onerror="this.src='favicon.png'"></iframe>
+        <p class="hero-description">
+            J&C Unblocked is built for students who want a simple, fast way to launch games and visit blocked sites — without digging through sketchy links or broken pages.
+        </p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">Open Game Hub</a>
+            <a class="btn btn-ghost" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">Launch Unblocked Browser</a>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:6px; flex-wrap:wrap; font-size:11px; color:var(--text-muted);">
+            <div class="hero-meta-pill">No logins · No ads · No drama</div>
+            <div class="hero-meta-pill">Optimized for school Chromebooks</div>
         </div>
     </div>
 
-    <!-- Right panel -->
-    <div class="right-panel">
-        <a class="panel-btn" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">Open Game Hub</a>
-        <a class="panel-btn" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">Launch Browser</a>
-        <a class="panel-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform" target="_blank">Request Game</a>
-        <a class="panel-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform" target="_blank">Report Bug</a>
-    </div>
+    <div class="hero-right">
+        <div class="hero-right-header">
+            <span>JC Control Panel</span>
+            <div class="hero-right-dots">
+                <span class="hero-right-dot" style="background:#f97373;"></span>
+                <span class="hero-right-dot" style="background:#fbbf24;"></span>
+                <span class="hero-right-dot" style="background:#4ade80;"></span>
+            </div>
+        </div>
 
-</body>
-</html>
+        <div class="hero-preview">
+            <div class="hero-preview-inner">
+                <div class="hero-preview-overlay"></div>
+                <div class="hero-preview-content">
+                    <div class="hero-preview-top">
+                        <span class="hero-preview-tag">Preview</span>
+                        <span>JC‑Browser · JC‑GameHub</span>
+                    </div>
+                    <div class="hero-preview-bottom">
+                        <div>
