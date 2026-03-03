@@ -217,41 +217,21 @@ a { color: inherit; }
     <!-- GAMES -->
     <div class="nav-group">
 
-        <a class="nav-link" href="https://game.azgame.io/traffic-rally/#" target="_blank"><span class="nav-dot"></span><span>Traffic Rally</span></a>
-        <a class="nav-link" href="https://www.scary-teacher.com/wp-content/uploads/games/scary-teacher.html" target="_blank"><span class="nav-dot"></span><span>Scary Teacher</span></a>
-        <a class="nav-link" href="https://2v2.io/" target="_blank"><span class="nav-dot"></span><span>2v2.io</span></a>
-        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest/" target="_blank"><span class="nav-dot"></span><span>Ice Baby Quest</span></a>
-        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest-2/" target="_blank"><span class="nav-dot"></span><span>Ice Baby Quest 2</span></a>
-        <a class="nav-link" href="https://azgames.io/arcade-tennis.embed" target="_blank"><span class="nav-dot"></span><span>Arcade Tennis</span></a>
-        <a class="nav-link" href="https://veck.io/" target="_blank"><span class="nav-dot"></span><span>Veck.io</span></a>
-        <a class="nav-link" href="https://survev.io/#" target="_blank"><span class="nav-dot"></span><span>Survev.io</span></a>
-        <a class="nav-link" href="https://roblnet13.github.io/pvz/game/iframe.html#" target="_blank"><span class="nav-dot"></span><span>Plants vs. Zombies</span></a>
-        <a class="nav-link" href="https://notan127.github.io/SM64-PC-Port-WebGL/classic/" target="_blank"><span class="nav-dot"></span><span>Super Mario 64</span></a>
-        <a class="nav-link" href="https://space-waves-unblocked.github.io/space-waves/#" target="_blank"><span class="nav-dot"></span><span>Space Waves</span></a>
-        <a class="nav-link" href="https://azgames.io/arcade-volley.embed" target="_blank"><span class="nav-dot"></span><span>Arcade Volley</span></a>
+        <!-- Your existing games here... -->
 
         <!-- NEW EMBEDDED GAMES -->
-        <a class="nav-link" onclick="showGame('realistic')">
-            <span class="nav-dot"></span><span>Realistic Car Driving</span>
-        </a>
-
         <a class="nav-link" onclick="showGame('drift')">
             <span class="nav-dot"></span><span>Drift Hunters</span>
         </a>
 
-    </div>
+        <a class="nav-link" onclick="showGame('cs')">
+            <span class="nav-dot"></span><span>CS 1.6</span>
+        </a>
 
-    <!-- FEEDBACK -->
-    <div>
-        <div class="sidebar-section-label">Feedback</div>
-        <div class="nav-group">
-            <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform" target="_blank">
-                <span class="nav-dot"></span><span>Request Game</span>
-            </a>
-            <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform" target="_blank">
-                <span class="nav-dot"></span><span>Report Bug</span>
-            </a>
-        </div>
+        <a class="nav-link" onclick="showGame('realistic')">
+            <span class="nav-dot"></span><span>Realistic Car Driving</span>
+        </a>
+
     </div>
 
 </aside>
@@ -261,7 +241,6 @@ a { color: inherit; }
 <div class="main-inner" id="home">
 <!-- HERO -->
 <section class="hero">
-
     <div>
         <div class="hero-pill">
             <span class="hero-pill-dot"></span>
@@ -279,85 +258,159 @@ a { color: inherit; }
         <p class="hero-description">
             J&C Unblocked is built for students who want a simple, fast way to launch games and visit blocked sites — without digging through sketchy links or broken pages.
         </p>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">Open Game Hub</a>
-            <a class="btn btn-ghost" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">Launch Unblocked Browser</a>
-        </div>
     </div>
-
 </section>
 
-<!-- EMBEDDED GAME: REALISTIC CAR DRIVING -->
-<div id="game-realistic" style="display:none; width:100%; height:85vh; margin-top:20px;">
-    <iframe id="realistic-frame" width="100%" height="100%" frameborder="0"></iframe>
+<!-- DRIFT HUNTERS EMBED -->
+<div id="game-drift" style="display:none; width:100%; height:100vh; margin-top:20px;">
+
+<html><head><base target="_blank"></head><body><div id="container">
+  <iframe id="fr" width="100%" height="100%" frameborder="0" allowfullscreen="" src=""></iframe>
+  <button class="play-button" type="button" onclick="PlayTo(this)">CLICK TO PLAY</button>
+  <p id="unblocked-text">G+</p>
+  <button class="fullscreen-button" type="button" onclick="openFullscreen()">FULLSCREEN</button>
 </div>
 
-<!-- EMBEDDED GAME: DRIFT HUNTERS -->
-<div id="game-drift" style="display:none; width:100%; height:85vh; margin-top:20px;">
-    <iframe id="drift-frame" width="100%" height="100%" frameborder="0"></iframe>
-</div>
+<style>
+  #container { position: relative; width: 100%; height: 100vh; margin: 0; padding: 0; overflow: hidden; }
+  #fr { display: none; width: 100%; height: 100%; border: none; background: #000; }
+  .play-button { padding: 20px 40px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 10px; font: bold 24px Arial; cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; }
+  .play-button:hover { background: #4a148c; }
+  .fullscreen-button { padding: 10px 15px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 5px; font: bold 14px Arial; cursor: pointer; position: fixed; bottom: 20px; right: 20px; z-index: 1002; }
+  .fullscreen-button:hover { background: #4a148c; }
+  body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; }
+</style>
 
-<!-- STATUS BAR -->
-<div class="status-bar">
-    <span class="status-dot"></span>
-    All systems operational · Updated automatically
-</div>
-
-<footer>
-    © 2026 <strong>J&C Unblocked</strong> · Built for students
-</footer>
-
-</div>
-</main>
-
-</div>
-
-<!-- SEARCH FILTER SCRIPT -->
 <script>
-document.getElementById("gameSearch").addEventListener("input", function () {
-    const query = this.value.toLowerCase();
-    const links = document.querySelectorAll(".nav-group .nav-link");
-    const labels = document.querySelectorAll(".sidebar-section-label");
+  const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbw8iHPqdVFEzquUYbNxFVAu1Tw4Nri5SWMRLdP_c7a84vCOHVG7YUWuhjSVptg1SVHr/exec';
 
-    links.forEach(link => {
-        const text = link.innerText.toLowerCase();
-        link.style.display = text.includes(query) ? "flex" : "none";
-    });
+  function PlayTo(button) {
+    const iframe = document.getElementById("fr");
+    iframe.src = DEFAULT_URL;
+    iframe.style.display = "block";
+    button.style.display = "none";
+  }
 
-    labels.forEach(label => {
-        const group = label.nextElementSibling;
-        const visibleLinks = group.querySelectorAll(".nav-link:not([style*='display: none'])");
-        label.style.display = visibleLinks.length === 0 ? "none" : "block";
-    });
-});
-</script>
+  function openFullscreen() {
+    const newWindow = window.open("about:blank", "_blank");
+    if (newWindow) {
+      newWindow.document.open();
+      newWindow.document.write(`
+        <!DOCTYPE html><html><head><style>
+        body,html{margin:0;padding:0;overflow:hidden;height:100%;width:100%;}
+        iframe{width:100%;height:100%;border:none;}
+        </style></head><body>
+        <iframe src="${DEFAULT_URL}" allowfullscreen></iframe>
+        </body></html>
+      `);
+      newWindow.document.close();
+    }
+  }
+</script></body></html>
 
-<!-- GAME EMBED LOADER SCRIPT -->
+</div>
+
+<!-- CS 1.6 EMBED -->
+<div id="game-cs" style="display:none; width:100%; height:100vh; margin-top:20px;">
+
+<html><head><base target="_blank"></head><body><div id="container">
+  <iframe id="fr" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+  <button class="play-button" type="button" onclick="PlayTo(this)">CLICK TO PLAY</button>
+  <p id="unblocked-text">G+</p>
+  <button class="fullscreen-button" type="button" onclick="openFullscreen()">FULLSCREEN</button>
+</div>
+
+<style>
+  .play-button { padding: 20px 40px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 10px; font: bold 24px Arial; cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; }
+  .play-button:hover { background: #4a148c; }
+  .fullscreen-button { padding: 10px 15px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 5px; font: bold 14px Arial; cursor: pointer; position: fixed; bottom: 20px; right: 20px; z-index: 1002; }
+  .fullscreen-button:hover { background: #4a148c; }
+  body, html { margin: 0; padding: 0; overflow: hidden; height: 100%; }
+</style>
+
 <script>
-function hideAllGames() {
-    document.getElementById("game-realistic").style.display = "none";
-    document.getElementById("game-drift").style.display = "none";
-}
+  const DB_NAME = 'GameCacheDB';
+  const STORE_NAME = 'GameFiles';
+  const CACHE_DURATION = 90 * 24 * 60 * 60 * 1000;
+  const FILE_URL = 'https://cdn.jsdelivr.net/gh/familiapablo/lopx@main/cs.xml';
 
-function showGame(game) {
-    hideAllGames();
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(DB_NAME, 1);
+      request.onupgradeneeded = (event) => {
+        event.target.result.createObjectStore(STORE_NAME, { keyPath: 'url' });
+      };
+      request.onsuccess = (event) => resolve(event.target.result);
+      request.onerror = (event) => reject(event.target.error);
+    });
+  }
 
-    if (game === "realistic") {
-        document.getElementById("realistic-frame").src =
-            "https://cdn.jsdelivr.net/gh/schoolflashx/bilbilu@main/ggoogle.com-6.xml";
-        document.getElementById("game-realistic").style.display = "block";
-    }
+  async function saveToCache(url, content) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const store = db.transaction(STORE_NAME, 'readwrite').objectStore(STORE_NAME);
+      const request = store.put({ url, content, timestamp: Date.now() });
+      request.onsuccess = resolve;
+      request.onerror = reject;
+    });
+  }
 
-    if (game === "drift") {
-        document.getElementById("drift-frame").src =
-            "https://script.google.com/macros/s/AKfycbw8iHPqdVFEzquUYbNxFVAu1Tw4Nri5SWMRLdP_c7a84vCOHVG7YUWuhjSVptg1SVHr/exec";
-        document.getElementById("game-drift").style.display = "block";
-    }
+  async function getFileFromCache(url) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const store = db.transaction(STORE_NAME, 'readonly').objectStore(STORE_NAME);
+      const request = store.get(url);
+      request.onsuccess = async (event) => {
+        const data = event.target.result;
+        if (data && (Date.now() - data.timestamp) < CACHE_DURATION) {
+          resolve(data.content);
+        } else {
+          try {
+            const response = await fetch(url);
+            const text = await response.text();
+            await saveToCache(url, text);
+            resolve(text);
+          } catch (err) { reject(err); }
+        }
+      };
+      request.onerror = reject;
+    });
+  }
 
-    window.scrollTo(0, 0);
-}
-</script>
+  function PlayTo(button) {
+    const iframe = document.getElementById("fr");
+    getFileFromCache(FILE_URL).then((text) => {
+      iframe.contentDocument.open();
+      iframe.contentDocument.write(text);
+      iframe.contentDocument.close();
+      iframe.style.display = "block";
+      button.style.display = "none";
+    });
+  }
 
-</body>
-</html>
+  function openFullscreen() {
+    getFileFromCache(FILE_URL).then((text) => {
+      const win = window.open("", "_blank");
+      win.document.open();
+      win.document.write(text);
+      win.document.close();
+    });
+  }
+</script></body></html>
+
+</div>
+
+<!-- REALISTIC CAR DRIVING EMBED -->
+<div id="game-realistic" style="display:none; width:100%; height:100vh; margin-top:20px;">
+
+<html><head><base target="_blank"></head><body><div id="container">
+  <iframe id="fr" width="100%" height="100%" frameborder="0" allowfullscreen=""></iframe>
+  <button class="play-button" type="button" onclick="PlayTo(this)">CLICK TO PLAY</button>
+  <p id="unblocked-text">G+</p>
+  <button class="fullscreen-button" type="button" onclick="openFullscreen()">FULLSCREEN</button>
+</div>
+
+<style>
+  .play-button { padding: 20px 40px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 10px; font: bold 24px Arial; cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; }
+  .play-button:hover { background: #4a148c; }
+  .fullscreen-button { padding: 10px 15px; background: #000; color: #fff; border: 2px solid #4a148c; border-radius: 5px; font: bold 14px Arial; cursor: pointer
