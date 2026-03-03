@@ -163,177 +163,6 @@ a { color: inherit; }
     flex-direction: column;
     gap: 22px;
 }
-
-/* HERO */
-.hero {
-    border-radius: 26px;
-    background: #020617;
-    box-shadow: var(--shadow-soft);
-    padding: 22px;
-    display: grid;
-    grid-template-columns: 1.4fr 1.1fr;
-    gap: 18px;
-}
-
-.hero-logo {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
-    box-shadow: var(--shadow-glow);
-}
-
-.hero-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(15,23,42,0.9);
-    border: 1px solid rgba(51,65,85,0.9);
-    font-size: 11px;
-    color: var(--text-muted);
-}
-
-.hero-pill-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background: var(--success);
-    box-shadow: 0 0 10px rgba(74,222,128,0.9);
-}
-
-.hero-title-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.hero-title {
-    font-size: 30px;
-    font-weight: 800;
-}
-
-.hero-subtitle {
-    font-size: 13px;
-    color: var(--text-muted);
-}
-
-.hero-description {
-    font-size: 14px;
-    color: var(--text-main);
-    max-width: 460px;
-}
-
-.btn {
-    border-radius: 999px;
-    padding: 9px 16px;
-    font-size: 13px;
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    text-decoration: none;
-    transition: var(--transition-fast);
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent-strong), #22c1c3);
-    color: #0b1120;
-    font-weight: 600;
-    box-shadow: var(--shadow-glow);
-}
-
-.btn-ghost {
-    background: rgba(15,23,42,0.9);
-    color: var(--text-main);
-    border: 1px solid rgba(51,65,85,0.9);
-}
-
-/* SECTION */
-.section {
-    border-radius: 22px;
-    background: rgba(15,23,42,0.96);
-    border: 1px solid rgba(31,41,55,0.95);
-    box-shadow: var(--shadow-soft);
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.section-title {
-    font-size: 17px;
-    font-weight: 600;
-}
-
-.section-subtitle {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-/* FEATURE GRID */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-
-.feature-card {
-    border-radius: var(--radius-lg);
-    background: #020617;
-    border: 1px solid rgba(31,41,55,0.95);
-    padding: 12px;
-    font-size: 12px;
-}
-
-/* ACTION GRID */
-.action-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-}
-
-.action-card {
-    border-radius: var(--radius-lg);
-    background: #020617;
-    border: 1px solid rgba(31,41,55,0.95);
-    padding: 12px;
-    font-size: 12px;
-}
-
-/* STATUS BAR */
-.status-bar {
-    border-radius: 999px;
-    background: rgba(15,23,42,0.96);
-    border: 1px solid rgba(31,41,55,0.95);
-    padding: 6px 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    color: var(--text-muted);
-}
-
-.status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background: var(--success);
-    box-shadow: 0 0 10px rgba(74,222,128,0.9);
-}
-
-/* FOOTER */
-footer {
-    margin-top: 6px;
-    font-size: 11px;
-    color: var(--text-muted);
-    text-align: center;
-}
-
-footer strong {
-    color: var(--accent);
-}
 </style>
 </head>
 
@@ -351,6 +180,20 @@ footer strong {
             <div class="sidebar-subtitle">School‑friendly game hub</div>
         </div>
     </div>
+
+    <!-- SEARCH BAR -->
+    <input id="gameSearch" type="text" placeholder="Search..."
+    style="
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #1f2937;
+        background: #0b1120;
+        color: #e5e7eb;
+        font-size: 14px;
+        outline: none;
+        margin-top: 6px;
+    ">
 
     <!-- MAIN -->
     <div>
@@ -371,68 +214,25 @@ footer strong {
         </div>
     </div>
 
-    <!-- GAMES (NO LABEL) -->
+    <!-- GAMES -->
     <div class="nav-group">
 
-        <a class="nav-link" href="https://game.azgame.io/traffic-rally/#" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Traffic Rally</span>
-        </a>
+        <a class="nav-link" href="https://game.azgame.io/traffic-rally/#" target="_blank"><span class="nav-dot"></span><span>Traffic Rally</span></a>
+        <a class="nav-link" href="https://www.scary-teacher.com/wp-content/uploads/games/scary-teacher.html" target="_blank"><span class="nav-dot"></span><span>Scary Teacher</span></a>
+        <a class="nav-link" href="https://2v2.io/" target="_blank"><span class="nav-dot"></span><span>2v2.io</span></a>
+        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest/" target="_blank"><span class="nav-dot"></span><span>Ice Baby Quest</span></a>
+        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest-2/" target="_blank"><span class="nav-dot"></span><span>Ice Baby Quest 2</span></a>
+        <a class="nav-link" href="https://azgames.io/arcade-tennis.embed" target="_blank"><span class="nav-dot"></span><span>Arcade Tennis</span></a>
+        <a class="nav-link" href="https://veck.io/" target="_blank"><span class="nav-dot"></span><span>Veck.io</span></a>
+        <a class="nav-link" href="https://survev.io/#" target="_blank"><span class="nav-dot"></span><span>Survev.io</span></a>
+        <a class="nav-link" href="https://roblnet13.github.io/pvz/game/iframe.html#" target="_blank"><span class="nav-dot"></span><span>Plants vs. Zombies</span></a>
+        <a class="nav-link" href="https://notan127.github.io/SM64-PC-Port-WebGL/classic/" target="_blank"><span class="nav-dot"></span><span>Super Mario 64</span></a>
+        <a class="nav-link" href="https://space-waves-unblocked.github.io/space-waves/#" target="_blank"><span class="nav-dot"></span><span>Space Waves</span></a>
+        <a class="nav-link" href="https://azgames.io/arcade-volley.embed" target="_blank"><span class="nav-dot"></span><span>Arcade Volley</span></a>
 
-        <a class="nav-link" href="https://www.scary-teacher.com/wp-content/uploads/games/scary-teacher.html" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Scary Teacher</span>
-        </a>
-
-        <a class="nav-link" href="https://2v2.io/" target="_blank">
-            <span class="nav-dot"></span>
-            <span>2v2.io</span>
-        </a>
-
-        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest/" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Ice Baby Quest</span>
-        </a>
-
-        <a class="nav-link" href="https://gamea.azgame.io/ice-baby-quest-2/" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Ice Baby Quest 2</span>
-        </a>
-
-        <a class="nav-link" href="https://azgames.io/arcade-tennis.embed" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Arcade Tennis</span>
-        </a>
-
-        <a class="nav-link" href="https://veck.io/" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Veck.io</span>
-        </a>
-
-        <a class="nav-link" href="https://survev.io/#" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Survev.io</span>
-        </a>
-
-        <a class="nav-link" href="https://roblnet13.github.io/pvz/game/iframe.html#" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Plants vs. Zombies</span>
-        </a>
-
-        <a class="nav-link" href="https://notan127.github.io/SM64-PC-Port-WebGL/classic/" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Super Mario 64</span>
-        </a>
-
-        <a class="nav-link" href="https://space-waves-unblocked.github.io/space-waves/#" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Space Waves</span>
-        </a>
-
-        <a class="nav-link" href="https://azgames.io/arcade-volley.embed" target="_blank">
-            <span class="nav-dot"></span>
-            <span>Arcade Volley</span>
-        </a>
+        <!-- NEW GAMES -->
+        <a class="nav-link" href="realistic-car-driving.html" target="_blank"><span class="nav-dot"></span><span>Realistic Car Driving</span></a>
+        <a class="nav-link" href="drift-hunters.html" target="_blank"><span class="nav-dot"></span><span>Drift Hunters</span></a>
 
     </div>
 
@@ -441,19 +241,12 @@ footer strong {
         <div class="sidebar-section-label">Feedback</div>
         <div class="nav-group">
             <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSd5LiEiN4MvVdlFTmpZyd_D2X0GZg3r3Oxs7YBwhCD31N3hTA/viewform" target="_blank">
-                <span class="nav-dot"></span>
-                <span>Request Game</span>
+                <span class="nav-dot"></span><span>Request Game</span>
             </a>
             <a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSck2HgITNfg7ibdiNVpO-u_Q6ctizTq5N4ul1jvZUFX1O4cYw/viewform" target="_blank">
-                <span class="nav-dot"></span>
-                <span>Report Bug</span>
+                <span class="nav-dot"></span><span>Report Bug</span>
             </a>
         </div>
-    </div>
-
-    <div class="sidebar-footer">
-        <span><strong>Tip:</strong> Keep this homepage open as your control center.</span>
-        <span>Built for students who want clean, quiet unblocked access.</span>
     </div>
 
 </aside>
@@ -461,7 +254,6 @@ footer strong {
 <!-- MAIN CONTENT -->
 <main class="main">
 <div class="main-inner" id="home">
-
 <!-- HERO -->
 <section class="hero">
 
@@ -487,30 +279,44 @@ footer strong {
             <a class="btn btn-primary" href="https://moneyenr123.github.io/JC-Unblocked-GameHub/" target="_blank">Open Game Hub</a>
             <a class="btn btn-ghost" href="https://moneyenr123.github.io/JC-Browser/" target="_blank">Launch Unblocked Browser</a>
         </div>
-
-        <div style="display:flex; gap:10px; margin-top:6px; flex-wrap:wrap; font-size:11px; color:var(--text-muted);">
-            <div class="hero-meta-pill">No logins · No ads · No drama</div>
-            <div class="hero-meta-pill">Optimized for school Chromebooks</div>
-        </div>
     </div>
 
-    <div class="hero-right">
-        <div class="hero-right-header">
-            <span>JC Control Panel</span>
-            <div class="hero-right-dots">
-                <span class="hero-right-dot" style="background:#f97373;"></span>
-                <span class="hero-right-dot" style="background:#fbbf24;"></span>
-                <span class="hero-right-dot" style="background:#4ade80;"></span>
-            </div>
-        </div>
+</section>
 
-        <div class="hero-preview">
-            <div class="hero-preview-inner">
-                <div class="hero-preview-overlay"></div>
-                <div class="hero-preview-content">
-                    <div class="hero-preview-top">
-                        <span class="hero-preview-tag">Preview</span>
-                        <span>JC‑Browser · JC‑GameHub</span>
-                    </div>
-                    <div class="hero-preview-bottom">
-                        <div>
+<!-- STATUS BAR -->
+<div class="status-bar">
+    <span class="status-dot"></span>
+    All systems operational · Updated automatically
+</div>
+
+<footer>
+    © 2026 <strong>J&C Unblocked</strong> · Built for students
+</footer>
+
+</div>
+</main>
+
+</div>
+
+<!-- SEARCH SCRIPT -->
+<script>
+document.getElementById("gameSearch").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const links = document.querySelectorAll(".nav-group .nav-link");
+    const labels = document.querySelectorAll(".sidebar-section-label");
+
+    links.forEach(link => {
+        const text = link.innerText.toLowerCase();
+        link.style.display = text.includes(query) ? "flex" : "none";
+    });
+
+    labels.forEach(label => {
+        const group = label.nextElementSibling;
+        const visibleLinks = group.querySelectorAll(".nav-link:not([style*='display: none'])");
+        label.style.display = visibleLinks.length === 0 ? "none" : "block";
+    });
+});
+</script>
+
+</body>
+</html>
