@@ -230,9 +230,14 @@ a { color: inherit; }
         <a class="nav-link" href="https://space-waves-unblocked.github.io/space-waves/#" target="_blank"><span class="nav-dot"></span><span>Space Waves</span></a>
         <a class="nav-link" href="https://azgames.io/arcade-volley.embed" target="_blank"><span class="nav-dot"></span><span>Arcade Volley</span></a>
 
-        <!-- NEW GAMES -->
-        <a class="nav-link" href="realistic-car-driving.html" target="_blank"><span class="nav-dot"></span><span>Realistic Car Driving</span></a>
-        <a class="nav-link" href="drift-hunters.html" target="_blank"><span class="nav-dot"></span><span>Drift Hunters</span></a>
+        <!-- NEW EMBEDDED GAMES -->
+        <a class="nav-link" onclick="showGame('realistic')">
+            <span class="nav-dot"></span><span>Realistic Car Driving</span>
+        </a>
+
+        <a class="nav-link" onclick="showGame('drift')">
+            <span class="nav-dot"></span><span>Drift Hunters</span>
+        </a>
 
     </div>
 
@@ -283,6 +288,16 @@ a { color: inherit; }
 
 </section>
 
+<!-- EMBEDDED GAME: REALISTIC CAR DRIVING -->
+<div id="game-realistic" style="display:none; width:100%; height:85vh; margin-top:20px;">
+    <iframe id="realistic-frame" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
+<!-- EMBEDDED GAME: DRIFT HUNTERS -->
+<div id="game-drift" style="display:none; width:100%; height:85vh; margin-top:20px;">
+    <iframe id="drift-frame" width="100%" height="100%" frameborder="0"></iframe>
+</div>
+
 <!-- STATUS BAR -->
 <div class="status-bar">
     <span class="status-dot"></span>
@@ -298,7 +313,7 @@ a { color: inherit; }
 
 </div>
 
-<!-- SEARCH SCRIPT -->
+<!-- SEARCH FILTER SCRIPT -->
 <script>
 document.getElementById("gameSearch").addEventListener("input", function () {
     const query = this.value.toLowerCase();
@@ -316,6 +331,32 @@ document.getElementById("gameSearch").addEventListener("input", function () {
         label.style.display = visibleLinks.length === 0 ? "none" : "block";
     });
 });
+</script>
+
+<!-- GAME EMBED LOADER SCRIPT -->
+<script>
+function hideAllGames() {
+    document.getElementById("game-realistic").style.display = "none";
+    document.getElementById("game-drift").style.display = "none";
+}
+
+function showGame(game) {
+    hideAllGames();
+
+    if (game === "realistic") {
+        document.getElementById("realistic-frame").src =
+            "https://cdn.jsdelivr.net/gh/schoolflashx/bilbilu@main/ggoogle.com-6.xml";
+        document.getElementById("game-realistic").style.display = "block";
+    }
+
+    if (game === "drift") {
+        document.getElementById("drift-frame").src =
+            "https://script.google.com/macros/s/AKfycbw8iHPqdVFEzquUYbNxFVAu1Tw4Nri5SWMRLdP_c7a84vCOHVG7YUWuhjSVptg1SVHr/exec";
+        document.getElementById("game-drift").style.display = "block";
+    }
+
+    window.scrollTo(0, 0);
+}
 </script>
 
 </body>
